@@ -1,0 +1,37 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  real_begin_at: 2018-03-06 06:24:13
+  real_end_at: 2018-03-06 06:24:13
+  base_value: 
+  base_value: 
+  due_day: 1
+  annual_interest_rate: 
+  annual_interest_rate: 
+  late_payment_interest_rate: 
+  late_payment_interest_rate: 
+  late_payment_single_fee: 
+  late_payment_single_fee: 
+  late_payment_daily_fee: 
+  late_payment_daily_fee: 
+  payment_mode: one
+  contract_access_url: MyString
+  contract_access_phone: MyString
+
+two:
+  real_begin_at: 2018-03-06 06:24:13
+  real_end_at: 2018-03-06 06:24:13
+  base_value: 
+  base_value: 
+  due_day: 1
+  annual_interest_rate: 
+  annual_interest_rate: 
+  late_payment_interest_rate: 
+  late_payment_interest_rate: 
+  late_payment_single_fee: 
+  late_payment_single_fee: 
+  late_payment_daily_fee: 
+  late_payment_daily_fee: 
+  payment_mode: two
+  contract_access_url: MyString
+  contract_access_phone: MyString
