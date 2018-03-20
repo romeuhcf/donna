@@ -10,6 +10,56 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20180320203141) do
+
+  create_table "contracts", force: :cascade do |t|
+    t.integer "payment_mode_id"
+    t.datetime "real_begin_at"
+    t.datetime "real_end_at"
+    t.decimal "base_value", precision: 8, scale: 2
+    t.integer "due_day"
+    t.decimal "annual_interest_rate", precision: 8, scale: 2
+    t.decimal "late_payment_interest_rate", precision: 8, scale: 2
+    t.decimal "late_payment_single_fee", precision: 8, scale: 2
+    t.decimal "late_payment_daily_fee", precision: 8, scale: 2
+    t.string "contract_access_url"
+    t.string "contract_access_phone"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["payment_mode_id"], name: "index_contracts_on_payment_mode_id"
+  end
+
+  create_table "payment_modes", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "versions", force: :cascade do |t|
+    t.string "item_type", null: false
+    t.integer "item_id", null: false
+    t.string "event", null: false
+    t.string "whodunnit"
+    t.text "object", limit: 1073741823
+    t.datetime "created_at"
+    t.index ["item_type", "item_id"], name: "index_versions_on_item_type_and_item_id"
+  end
 
 end

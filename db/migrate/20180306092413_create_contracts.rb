@@ -1,20 +1,15 @@
 class CreateContracts < ActiveRecord::Migration[5.1]
   def change
     create_table :contracts do |t|
+      t.belongs_to :payment_mode, foreign_key: true
       t.datetime :real_begin_at
       t.datetime :real_end_at
-      t.decimal5 :base_value
-      t.decimal2 :base_value
+      t.decimal :base_value, :precision => 8, :scale => 2
       t.integer :due_day
-      t.decimal5 :annual_interest_rate
-      t.decimal2 :annual_interest_rate
-      t.decinal5 :late_payment_interest_rate
-      t.decinal2 :late_payment_interest_rate
-      t.decimal5 :late_payment_single_fee
-      t.decimal2 :late_payment_single_fee
-      t.decimal5 :late_payment_daily_fee
-      t.decimal2 :late_payment_daily_fee
-      t.belongs_to :payment_mode, foreign_key: true
+      t.decimal :annual_interest_rate, :precision => 8, :scale => 2
+      t.decimal :late_payment_interest_rate, :precision => 8, :scale => 2
+      t.decimal :late_payment_single_fee, :precision => 8, :scale => 2
+      t.decimal :late_payment_daily_fee, :precision => 8, :scale => 2
       t.string :contract_access_url
       t.string :contract_access_phone
 
