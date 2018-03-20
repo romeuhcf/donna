@@ -1,0 +1,20 @@
+<h1>+ contas estão chegando</h1>
+
+<% if @bills.today.any? %>
+  <h2>Contas que vencem hoje</h2>
+  <%= render partial: 'contract', collection: @bills.today %>
+<% end %>
+
+<% if @bills.tomorrow.any? %>
+  <h2>Contas que vencem amanhã</h2>
+  <%= render partial: 'contract', collection: @bills.tomorrow %>
+<% end %>
+
+<% if @bills.soon.any? %>
+  <h2>Contas que vencem em breve</h2>
+  <%= render partial: 'contract', collection: @bills.soon %>
+<% end %>
+<hr/>
+<p>
+Obrigado pela atenção
+</p>

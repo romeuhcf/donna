@@ -21,4 +21,8 @@
 class Contract < ApplicationRecord
   belongs_to :payment_mode
   has_paper_trail
+
+  scope :today, ->{where(due_day: Date.today.day)}
+  scope :tomorrow, ->{where(due_day: Date.tomorrow.day)}
+  scope :soon, ->{range = [Date.today.advance(days: 2), Date.today.advance(days: 5)].map(&:day) ; where("due_day BETWEEN ? AND ?", range.min, range.max)}
 end

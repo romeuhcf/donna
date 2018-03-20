@@ -1,0 +1,12 @@
+<div style="border: 1px solid grey; margin-bottom: 10px">
+  <p>  Nome: <b><%= contract.name%></b> </p>
+  <p>  Valor: <b><%= contract.base_value%>
+<% if contract.variable_value? %>
+    &nbsp; (Variável)
+  <%end%>
+  </b>
+  </p>
+  <p>  Vence dia: <b><%= contract.due_day%></b></p>
+  <p>  Forma de pagto: <b><%= contract.payment_mode&.name%></b></p>
+
+</div>

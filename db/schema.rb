@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180320203141) do
+ActiveRecord::Schema.define(version: 20180320210456) do
 
   create_table "contracts", force: :cascade do |t|
     t.integer "payment_mode_id"
@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(version: 20180320203141) do
     t.string "contract_access_phone"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
+    t.boolean "variable_value"
     t.index ["payment_mode_id"], name: "index_contracts_on_payment_mode_id"
   end
 

@@ -52,6 +52,9 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'foreman'
   gem 'annotate'
+  gem 'rspec-rails'
+  gem 'guard-rspec'
+  gem 'guard'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
